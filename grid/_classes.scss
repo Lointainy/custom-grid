@@ -20,8 +20,12 @@
 }
 
 // the loop creates columns classes with media query
-@for $i from 1 through $grid-columns {
-  .col-#{$i} {
-    @include col($i);
+@each $bp, $width in $grid-bp {
+  @include forMediaEach($width) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$bp}-#{$i} {
+        @include col($i);
+      }
+    }
   }
 }
