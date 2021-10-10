@@ -6,6 +6,11 @@
   background-color: #aaa;
 }
 
+@mixin container-width($value) {
+  $value: map-get($container-value, $value);
+  max-width: $value;
+} // container width
+
 //Base style for row
 @mixin row {
   display: flex;
@@ -19,6 +24,10 @@
   width: calc(#{percentage($size / $grid-columns)} - #{$grit-space});
   margin: 0 $grit-space-side;
 }
+
+@mixin offset($size) {
+  margin-left: calc((#{percentage($size / $grid-columns)} - #{$grit-space}) + ((#{$grit-space-side}) * 3));
+} // offset for columns
 
 //Custom media query
 @mixin mediaWidth($width, $value) {

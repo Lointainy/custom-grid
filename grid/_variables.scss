@@ -23,3 +23,11 @@ $media-value: (
   mx: max,
   mn: min,
 ) !default;
+
+//default breakpoits for container width values
+$container-value: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: $container-mw,
+);
