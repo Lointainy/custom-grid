@@ -11,3 +11,17 @@
 .col {
   flex: 1 0 0%;
 }
+
+// the loop creates columns classes
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include col($i);
+  }
+}
+
+// the loop creates columns classes with media query
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include col($i);
+  }
+}
