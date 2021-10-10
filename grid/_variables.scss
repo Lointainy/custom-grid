@@ -1,0 +1,25 @@
+$container-mw: 1140px !default;
+
+$grid-columns: 12 !default;
+$grit-space: 30px;
+$grit-space-side: $grit-space / 2;
+
+$grid-bp: (
+  xs: 0px,
+  // Extra small screen / phone
+  sm: 576px,
+  // Small screen / phone
+  md: 768px,
+  // Medium screen / tablet
+  lg: 992px,
+  // Large screen / desktop
+  xl: 1200px,
+  // Extra large screen / wide desktop
+  xxl: 1400px,
+  // Extra large screen / wide desktop
+) !default;
+
+$media-value: (
+  mx: max,
+  mn: min,
+) !default;
