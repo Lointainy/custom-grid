@@ -21,7 +21,9 @@ $grid-bp: (
 
 $media-value: (
   mx: max,
+  // desctop first
   mn: min,
+  // mobile first
 ) !default;
 
 //default breakpoits for container width values
