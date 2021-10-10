@@ -15,18 +15,18 @@
 @mixin row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 (-$grit-space-side);
+  margin: 0 (-$grid-space-side);
 }
 
 // Base style for all columns
 @mixin col($size) {
   flex: 0 0 auto;
-  width: calc(#{percentage($size / $grid-columns)} - #{$grit-space});
-  margin: 0 $grit-space-side;
+  width: calc(#{percentage($size / $grid-columns)} - #{$grid-space});
+  margin: 0 $grid-space-side;
 }
 
 @mixin offset($size) {
-  margin-left: calc((#{percentage($size / $grid-columns)} - #{$grit-space}) + ((#{$grit-space-side}) * 3));
+  margin-left: calc((#{percentage($size / $grid-columns)} - #{$grid-space}) + ((#{$grid-space-side}) * 3));
 } // offset for columns
 
 //Custom media query
