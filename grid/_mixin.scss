@@ -2,7 +2,7 @@
 @mixin container {
   margin: 0 auto;
   max-width: $container-mw;
-  padding: 0 $grit-space-side;
+  padding: 0 $grid-space-side;
   background-color: #aaa;
 }
 
