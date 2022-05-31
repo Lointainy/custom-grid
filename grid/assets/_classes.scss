@@ -1,17 +1,3 @@
-// get on if u need, or create custom class
-.container {
-  @include container;
-}
-
-.row {
-  @include row;
-}
-
-// Creates CSS classes system for work in html file
-.col {
-  flex: 1 0 0%;
-}
-
 // the loop creates columns classes
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
