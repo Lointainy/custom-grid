@@ -2,7 +2,7 @@ $container-mw: 1280px !default; // width container
 
 $grid-columns: 12 !default; // numbers columns
 $grid-space: 30px; // margin
-$grid-space-side: $grid-space / 2; // margin one side
+$grid-space-side: calc($grid-space / 2); // margin one side
 
 // DON`T TOUCH
 $grid-bp: (
@@ -32,5 +32,5 @@ $container-value: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: $container-mw
+  xl: $container-mw,
 );
