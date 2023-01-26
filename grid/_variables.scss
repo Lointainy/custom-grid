@@ -1,5 +1,4 @@
 $container-mw: 1280px !default; // width container
-$container-type: padding;
 $grid-columns: 12 !default; // numbers columns
 $grid-space: 30px; // margin
 $grid-space-side: calc($grid-space / 2); // margin one side
@@ -34,4 +33,3 @@ $container-value: (
 	lg: 960px,
 	xl: $container-mw
 );
-
