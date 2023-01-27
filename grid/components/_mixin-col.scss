@@ -1,11 +1,32 @@
-// Base style for all columns
+// Base style for columns
 @mixin col($size) {
-	flex: 0 0 auto;
-	width: calc(#{percentage(calc($size / $grid-columns))} - #{$grid-space});
-	margin: 0 $grid-space-side;
+	grid-column-start: auto;
+
+	@each $name, $value in $grid-bp {
+		@include media($name, mn) {
+			$max-size: calc(math.round(calc($value * calc($grid-columns / 100)) * 0.1) / 1px);
+
+			@if ($max-size > $grid-columns) {
+				$max-size: $grid-columns;
+			}
+
+			@if ($size >= $max-size) {
+				@if ($max-size != 0) {
+					grid-column-end: span $max-size;
+				} @else {
+					grid-column-end: span 1;
+				}
+			} @else {
+				grid-column-end: span $size;
+			}
+		}
+	}
 }
 
-@mixin offset($size) {
-	margin-left: calc((#{percentage(calc($size / $grid-columns))} - #{$grid-space}) + ((#{$grid-space-side}) * 3));
+@mixin offset($type, $size) {
+	@if ($type == row) {
+		grid-row-start: $size;
+	} @else if ($type == col) {
+		grid-column-start: $size + 1;
+	}
 } // offset for columns
-
