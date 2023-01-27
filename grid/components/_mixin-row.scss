@@ -1,7 +1,25 @@
 //Base style for row
-@mixin row {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 (-$grid-space-side);
-}
+@mixin row() {
+	display: grid;
+	gap: $grid-space-side;
+	grid-auto-rows: 3rem;
 
+	@each $name, $value in $grid-bp {
+		@media (min-width: $value) {
+			@if ($name == xl) {
+				grid-template-columns: repeat($grid-columns, 1fr);
+			} @else if ($name == lg) {
+				$size: math.floor(calc($grid-columns * 0.75));
+				grid-template-columns: repeat($size, 1fr);
+			} @else if ($name == md) {
+				$size: math.floor(calc($grid-columns * 0.5));
+				grid-template-columns: repeat($size, 1fr);
+			} @else if ($name == sm) {
+				$size: math.floor(calc($grid-columns * 0.25));
+				grid-template-columns: repeat($size, 1fr);
+			} @else if ($name == xs) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
+}
